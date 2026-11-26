@@ -1,0 +1,1115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Cricket Performance Analyser</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Authentication Section -->
+<section id="auth-section">
+
+    <div class="auth-container">
+
+        <h2>🏏 Welcome to Cricket Performance Analyser</h2>
+        <p>Create an account or sign in to access your personal statistics.</p>
+
+        <!-- Sign Up -->
+        <div id="signup-form">
+
+            <h3>Create Account</h3>
+
+            <input
+                type="email"
+                id="signup-email"
+                placeholder="Email address"
+            >
+
+            <input
+                type="password"
+                id="signup-password"
+                placeholder="Password"
+            >
+
+            <button id="signup-button">Create Account</button>
+
+            <p id="signup-message"></p>
+
+            <hr>
+
+            <p>Already have an account?</p>
+
+            <button id="show-login-button">Sign In</button>
+
+        </div>
+
+
+        <!-- Sign In -->
+        <div id="login-form" style="display: none;">
+
+            <h3>Sign In</h3>
+
+            <input
+                type="email"
+                id="login-email"
+                placeholder="Email address"
+            >
+
+            <input
+                type="password"
+                id="login-password"
+                placeholder="Password"
+            >
+
+            <button id="login-button">Sign In</button>
+
+            <p id="login-message"></p>
+
+            <hr>
+
+            <p>Don't have an account?</p>
+
+            <button id="show-signup-button">Create Account</button>
+
+        </div>
+
+    </div>
+
+</section>
+ <!-- Player Dashboard -->
+    <div id="dashboard" style="display: none;">
+
+<div class="sidebar">
+
+    <button onclick="showPage('home-page')">
+        🏠 <span>Home</span>
+    </button>
+
+    <button onclick="showPage('statistics-page')">
+        📊 <span>Statistics</span>
+    </button>
+
+    <button onclick="showPage('analytics-page')">
+        📈 <span>Analytics</span>
+    </button>
+
+    <button onclick="showPage('fitness-page')">
+        🏃 <span>Fitness</span>
+    </button>
+
+    <button onclick="showPage('diet-page')">
+        🥗 <span>Diet</span>
+    </button>
+
+    <button onclick="showPage('videos-page')">
+        🎥 <span>Videos</span>
+    </button>
+
+</div>
+
+ <header class="topbar">
+
+    <div class="logo-section">
+
+      <img
+    src="designer.png"
+    alt="Cricket Performance Analyser Logo"
+    class="logo">
+
+    </div>
+
+    <h1>
+
+        Cricket Performance Analyser
+
+    </h1>
+
+    <div class="user-menu">
+
+        <button
+            class="user-button"
+            onclick="toggleDropdown()"
+        >
+👤
+
+<span id="userDisplayName">
+    Shreyansh
+</span>
+
+▼
+
+        </button>
+
+        <div
+            id="dropdown-menu"
+            class="dropdown-content"
+        >
+
+ <button onclick="showPage('profile-page')">
+    Profile
+</button>
+
+            <button onclick="signOut()">
+                Sign Out
+            </button>
+
+        </div>
+
+    </div>
+
+</header>
+
+<div id="home-page"
+     class="page">
+
+    <h2>Welcome back, Shreyansh!</h2>
+
+    <div class="feature-grid">
+
+       <div class="feature-card"
+     onclick="showPage('statistics-page')">
+            <h3>📊 Statistics</h3>
+            <p>View your cricket statistics.</p>
+        </div>
+
+       <div class="feature-card"
+     onclick="showPage('analytics-page')">
+            <h3>📈 Analytics</h3>
+            <p>Analyse strengths and weaknesses.</p>
+        </div>
+
+        <div class="feature-card"
+     onclick="showPage('fitness-page')">
+            <h3>🏃 Fitness</h3>
+            <p>Generate cricket fitness plans.</p>
+        </div>
+
+        <div class="feature-card"
+     onclick="showPage('diet-page')">
+            <h3>🥗 Diet</h3>
+            <p>Track nutrition and BMI.</p>
+        </div>
+
+        <div class="feature-card"
+     onclick="showPage('videos-page')">
+            <h3>🎥 Videos</h3>
+            <p>Watch improvement tutorials.</p>
+        </div>
+
+    </div>
+
+<div class="analysis-card"
+     id="nutritionTracker">
+
+    <h3>
+        💧 Daily Nutrition Tracker
+    </h3>
+
+    <div class="nutrition-row">
+
+        <label>
+            Water
+        </label>
+
+        <input
+            type="number"
+            id="waterInput">
+
+        <span>
+            / *8-16 glasses
+        </span>
+
+    </div>
+
+    <div class="nutrition-row">
+
+        <label>
+            Protein
+        </label>
+
+        <input
+            type="number"
+            id="proteinInput">
+
+        <span>
+            / *120-160g
+        </span>
+
+    </div>
+
+    <div class="nutrition-row">
+
+        <label>
+            Calories
+        </label>
+
+        <input
+            type="number"
+            id="calorieInput">
+
+        <span>
+            / *2500-4000 calories
+        </span>
+
+        
+    </div>
+
+    <button
+        onclick="saveNutritionTracker()">
+
+        Save Progress
+
+    </button>
+
+      <h4> *Nutrition demands vary based on individual needs, activity level, and fitness goals. </h4>
+
+</div>
+    
+</div>
+
+<div id="profile-page"
+     class="page"
+     style="display:none;">
+
+    <div class="analysis-card">
+
+        <h2>
+            Player Profile
+        </h2>
+
+        <label>
+            Full Name
+        </label>
+
+        <input
+            type="text"
+            id="fullName">
+
+        <br><br>
+
+        <button
+            onclick="saveProfile()">
+
+            Save Profile
+
+        </button>
+
+    </div>
+
+</div>
+
+<div id="statistics-page"
+     class="page"
+     style="display:none;">
+
+<div class="player-header">
+
+    <div class="player-info">
+
+     <h1>🏏 Shreyansh Dutta</h1>
+
+     <h2> Overview </h2>
+
+<p>
+    Right-Hand Batter |
+    Right-Arm Fast Bowler
+</p>
+
+    </div>
+
+   <div class="player-overview">
+
+    <div class="overview-card">
+
+        <h3>Matches</h3>
+
+        <p>360</p>
+
+    </div>
+
+    <div class="overview-card">
+
+        <h3>Runs</h3>
+
+        <p>8753</p>
+
+    </div>
+
+    <div class="overview-card">
+
+        <h3>Wickets</h3>
+
+        <p>102</p>
+
+    </div>
+
+</div>
+
+<h2>Batting Statistics</h2>
+
+<div class="stats-grid">
+
+    <div class="stat-card">
+        <h3>Innings</h3>
+        <p>322</p>
+    </div>
+
+    <div class="stat-card">
+        <h3>Runs</h3>
+        <p>8753</p>
+    </div>
+
+    <div class="stat-card">
+        <h3>Average</h3>
+        <p>37.41</p>
+    </div>
+
+    <div class="stat-card">
+        <h3>Strike Rate</h3>
+        <p>109.98</p>
+    </div>
+
+    <div class="stat-card">
+        <h3>Highest Score</h3>
+        <p>126*</p>
+    </div>
+
+    <div class="stat-card">
+        <h3>50s</h3>
+        <p>54</p>
+    </div>
+
+    <div class="stat-card">
+        <h3>100s</h3>
+        <p>12</p>
+    </div>
+
+    <div class="stat-card">
+        <h3>Not Outs</h3>
+        <p>88</p>
+    </div>
+
+    <div class="stat-card">
+        <h3>4s</h3>
+        <p>929</p>
+    </div>
+
+    <div class="stat-card">
+        <h3>6s</h3>
+        <p>207</p>
+    </div>
+
+    <div class="stat-card">
+        <h3>Ducks</h3>
+        <p>22</p>
+    </div>
+
+</div>
+
+<h2>Bowling Statistics</h2>
+
+<div class="stats-grid">
+
+    <div class="stat-card">
+        <h3>Innings</h3>
+        <p>217</p>
+    </div>
+
+    <div class="stat-card">
+        <h3>Overs</h3>
+        <p>565.1</p>
+    </div>
+
+    <div class="stat-card">
+        <h3>Maidens</h3>
+        <p>26</p>
+    </div>
+
+    <div class="stat-card">
+        <h3>Wickets</h3>
+        <p>102</p>
+    </div>
+
+    <div class="stat-card">
+        <h3>Runs Given</h3>
+        <p>3338</p>
+    </div>
+
+    <div class="stat-card">
+        <h3>Economy</h3>
+        <p>5.91</p>
+    </div>
+
+    <div class="stat-card">
+        <h3>Average</h3>
+        <p>32.73</p>
+    </div>
+
+    <div class="stat-card">
+        <h3>Strike Rate</h3>
+        <p>33.25</p>
+    </div>
+
+    <div class="stat-card">
+        <h3>Wides</h3>
+        <p>276</p>
+    </div>
+
+    <div class="stat-card">
+        <h3>No Balls</h3>
+        <p>52</p>
+    </div>
+
+    <div class="stat-card">
+        <h3>Best Bowling</h3>
+        <p>3/8</p>
+    </div>
+
+</div>
+
+<h2>Detailed Batting Analysis</h2>
+
+<div class="analysis-card">
+
+    <h3>Run Distribution</h3>
+
+    <canvas id="battingRunDistribution"></canvas>
+
+</div>
+
+<div class="analysis-card">
+
+    <h3>Batting Position Analysis</h3>
+
+    <canvas id="battingPositionInnings"></canvas>
+
+    <br>
+
+    <canvas id="battingPositionRuns"></canvas>
+
+    <br>
+
+    <canvas id="battingPositionAverage"></canvas>
+
+</div>
+
+<div class="analysis-card">
+
+    <h3>Pace vs Spin</h3>
+
+    <table class="stats-table">
+
+        <tr>
+            <th>Type</th>
+            <th>Runs</th>
+            <th>Average</th>
+            <th>SR</th>
+            <th>4s</th>
+            <th>6s</th>
+            <th>Outs</th>
+        </tr>
+
+        <tr>
+            <td>Pace</td>
+            <td>4384</td>
+            <td>42.98</td>
+            <td>100.92</td>
+            <td>476</td>
+            <td>96</td>
+            <td>102</td>
+        </tr>
+
+        <tr>
+            <td>Spin</td>
+            <td>3757</td>
+            <td>36.48</td>
+            <td>107.16</td>
+            <td>364</td>
+            <td>105</td>
+            <td>103</td>
+        </tr>
+
+    </table>
+
+</div>
+
+<div class="analysis-card">
+
+    <h3>Runs by Year</h3>
+
+    <canvas id="runsByYear"></canvas>
+
+</div>
+
+<h2>Detailed Bowling Analysis</h2>
+
+<div class="analysis-card">
+
+    <h3>Types of Wickets</h3>
+
+    <canvas id="wicketTypes"></canvas>
+
+</div>
+
+<div class="analysis-card">
+
+    <h3>RHB vs LHB</h3>
+
+    <table class="stats-table">
+
+        <tr>
+            <th>Batter Type</th>
+            <th>Wicket %</th>
+            <th>Average</th>
+            <th>Strike Rate</th>
+        </tr>
+
+        <tr>
+            <td>Right-Handed Batters</td>
+            <td>84%</td>
+            <td>33.06</td>
+            <td>30.14</td>
+        </tr>
+
+        <tr>
+            <td>Left-Handed Batters</td>
+            <td>16%</td>
+            <td>32.53</td>
+            <td>32.07</td>
+        </tr>
+
+    </table>
+
+</div>
+
+<div class="analysis-card">
+
+    <h3>Batting Position Wise Wickets</h3>
+
+    <canvas id="wicketsByPosition"></canvas>
+
+</div>
+
+<div class="analysis-card">
+
+    <h3>Run Distribution (Bowling)</h3>
+
+    <canvas id="bowlingRunDistribution"></canvas>
+
+</div>
+
+<div class="analysis-card">
+
+    <h3>Extras Analysis</h3>
+
+    <canvas id="extrasChart"></canvas>
+
+    <div class="extras-info">
+
+        <p>
+            Bowls 1 wide every ~2 overs
+        </p>
+
+        <p>
+            Bowls 1 no-ball every ~10 overs
+        </p>
+
+    </div>
+
+</div>
+
+<div class="analysis-card">
+
+    <h3>Wickets By Year</h3>
+
+    <canvas id="wicketsByYear"></canvas>
+
+</div>
+
+</div>
+
+</div>
+
+
+<div id="analytics-page"
+     class="page"
+     style="display:none;">
+
+    <h2>Performance Analysis</h2>
+
+    <div class="analysis-card">
+
+        <h3>🏏 Match Reflection Journal</h3>
+
+        <label>Match Date</label>
+
+<input
+    type="date"
+    id="matchDate">
+
+        <label>Result</label>
+        <select id="matchResult">
+            <option>Won</option>
+            <option>Lost</option>
+            <option>Draw</option>
+        </select>
+
+        <hr>
+
+  <h3>Batting Reflection</h3>
+
+<label>Did you bat?</label>
+
+<select
+    id="batStatus"
+    onchange="toggleBatting()">
+
+    <option>Yes</option>
+    <option>No</option>
+
+</select>
+
+<div id="battingSection">
+
+<label>Batting Position</label>
+
+<select id="batPosition">
+
+    <option>1</option>
+    <option>2</option>
+    <option>3</option>
+    <option>4</option>
+    <option>5</option>
+    <option>6</option>
+    <option>7</option>
+    <option>8</option>
+    <option>9</option>
+    <option>10</option>
+    <option>11</option>
+
+</select>
+
+
+<label>Batting Confidence (1-10)</label>
+<input type="number" id="batConfidence" min="1" max="10">
+
+<label>How would you rate your innings? (1-10)</label>
+<input type="number" id="inningsRating" min="1" max="10">
+
+<h4>Detailed Score</h4>
+
+<div class="score-grid">
+
+    <input type="number"
+           id="batRuns"
+           placeholder="Runs">
+
+    <input type="number"
+           id="batBalls"
+           placeholder="Balls">
+
+    <select id="batOutStatus">
+        <option>Out</option>
+        <option>Not Out</option>
+    </select>
+
+    <input type="number"
+           id="batFours"
+           placeholder="4s">
+
+    <input type="number"
+           id="batSixes"
+           placeholder="6s">
+
+</div>
+
+<label>How were you dismissed?</label>
+
+<select id="dismissalType">
+    <option>Not Out</option>
+    <option>Bowled</option>
+    <option>Caught</option>
+    <option>LBW</option>
+    <option>Run Out</option>
+    <option>Stumped</option>
+</select>
+
+<label>Biggest Batting Strength</label>
+<textarea id="batStrength"></textarea>
+
+<label>Biggest Improvement Area</label>
+<textarea id="batWeakness"></textarea>
+
+
+</div>
+
+
+<h3>Bowling Reflection</h3>
+
+<label>Did you bowl?</label>
+
+<select
+    id="bowlStatus"
+    onchange="toggleBowling()">
+
+    <option>Yes</option>
+    <option>No</option>
+
+</select>
+
+<div id="bowlingSection">
+
+<label>How would you rate your bowling performance? (1-10)</label>
+
+<input type="number"
+       id="bowlRating"
+       min="1"
+       max="10">
+
+<h4>Bowling Figures</h4>
+
+<div class="score-grid">
+
+    <input type="number"
+           id="bowlOvers"
+           placeholder="Overs">
+
+    <input type="number"
+           id="bowlMaidens"
+           placeholder="Maidens">
+
+    <input type="number"
+           id="bowlRuns"
+           placeholder="Runs">
+
+    <input type="number"
+           id="bowlWickets"
+           placeholder="Wickets">
+
+</div>
+
+<label>Biggest Bowling Strength</label>
+
+<textarea id="bowlStrength"></textarea>
+
+<label>Biggest Improvement Area</label>
+
+<textarea id="bowlWeakness"></textarea>
+
+
+</div>
+
+      <h3>Fielding Reflection</h3>
+
+<label>Fielding Rating (1-10)</label>
+
+<input type="number"
+       id="fieldingRating"
+       min="1"
+       max="10">
+
+<label>Dropped Catch / Misfield?</label>
+
+<select id="dropCatch">
+
+    <option>No</option>
+    <option>Yes</option>
+
+</select>
+
+<label>Catches Taken</label>
+
+<input type="number"
+       id="catchesTaken"
+       min="0">
+
+<label>Run Outs</label>
+
+<input type="number"
+       id="runOuts"
+       min="0">
+
+       <h3>Mental Reflection</h3>
+
+<label>Focus Rating (1-10)</label>
+
+<input type="number"
+       id="focusRating"
+       min="1"
+       max="10">
+
+<label>What did you learn from this match?</label>
+
+<textarea id="lessonLearned"></textarea>
+
+        <br><br>
+
+        <button onclick="generateJournalAnalysis()">
+            Generate Analysis
+        </button>
+
+    </div>
+
+    <div id="analysisOutput"
+         class="analysis-card"
+         style="display:none;">
+    </div>
+
+<div class="analysis-card">
+
+    <h2>Match History</h2>
+
+    <div id="matchHistory">
+
+        <p>
+            No match reports yet.
+        </p>
+
+    </div>
+
+    <div id="historyReport"
+     class="analysis-card"
+     style="display:none;">
+
+</div>
+
+</div>
+
+
+</div>
+
+
+
+</div>
+
+<div id="fitness-page"
+     class="page"
+     style="display:none;">
+
+    <h2>🏃 Cricket Fitness Dashboard</h2>
+
+
+     <div id="fitnessProfile"
+     class="analysis-card"
+     style="display:none;">
+</div>
+
+<div id="fitnessForm">
+
+<div class="fitness-grid">
+
+    <div>
+
+        <label>Age</label>
+
+        <input
+            type="number"
+            id="fitnessAge">
+
+    </div>
+
+    <div>
+
+        <label>Height (cm)</label>
+
+        <input
+            type="number"
+            id="fitnessHeight">
+
+    </div>
+
+    <div>
+
+        <label>Weight (kg)</label>
+
+        <input
+            type="number"
+            id="fitnessWeight">
+
+    </div>
+
+    <div>
+
+        <label>Training Days</label>
+
+        <input
+            type="number"
+            id="trainingDays"
+            min="1"
+            max="7">
+
+    </div>
+
+    <div>
+
+        <label>Fitness Goal</label>
+
+        <select id="fitnessGoal">
+
+            <option>Batting</option>
+
+            <option>Fast Bowling</option>
+
+            <option>Spin Bowling</option>
+
+            <option>Wicketkeeping</option>
+
+         <option>Fast-Bowling All-Rounder</option>
+
+<option>Spin-Bowling All-Rounder</option>
+
+
+        </select>
+
+    </div>
+
+</div>
+
+        <h3>Fitness Metrics</h3>
+
+        <label>40m Sprint Time (seconds)</label>
+
+        <input type="number"
+               step="0.01"
+               id="sprintTime">
+
+        <label>Yo-Yo Test Score</label>
+
+        <input type="number"
+               id="yoyoScore">
+
+        <label>Vertical Jump (cm)</label>
+
+        <input type="number"
+               id="verticalJump">
+
+        <label>Push-Ups (Max)</label>
+
+        <input type="number"
+               id="pushUps">
+
+        <label>Plank Hold (seconds)</label>
+
+        <input type="number"
+               id="plankTime">
+
+        <br><br>
+
+
+              <button
+    onclick="generateFitnessPlan();">
+
+    Generate Fitness Plan
+
+</button>
+
+    </div>
+
+
+
+
+<button
+    id="resetFitnessButton"
+    onclick="resetFitnessProfile()"
+    style="display:none;">
+
+    Reset Fitness Profile
+
+</button>
+
+    <div id="fitnessOutput"
+         class="analysis-card"
+         style="display:none;">
+    </div>
+
+</div>
+
+</div>
+
+
+<div id="diet-page"
+     class="page"
+     style="display:none;">
+
+    <h2>🥗 Diet Planner</h2>
+
+    <div id="dietForm"
+         class="analysis-card">
+
+        <h3>Diet Preferences</h3>
+
+        <label>Diet Type</label>
+
+        <select id="dietType">
+
+            <option>Vegetarian</option>
+
+            <option>Non-Vegetarian</option>
+
+            <option>Vegan</option>
+
+        </select>
+
+        <br><br>
+
+        <button
+            onclick="generateDietPlan()">
+
+            Generate Diet Plan
+
+        </button>
+
+    </div>
+
+    <div id="dietProfile"
+         class="analysis-card"
+         style="display:none;">
+    </div>
+
+    <div id="dietOutput"
+         class="analysis-card"
+         style="display:none;">
+    </div>
+
+    <button
+        id="resetDietButton"
+        onclick="resetDietProfile()"
+        style="display:none;">
+
+        Reset Diet Plan
+
+    </button>
+
+</div>
+
+<div id="videos-page"
+     class="page"
+     style="display:none;">
+
+    <h2>Training Videos</h2>
+
+    <p>Coming Soon</p>
+
+</div>
+
+
+
+    <footer>
+        <p>Cricket Performance Analyser | Personal Project</p>
+    </footer>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script type="module" src="script.js"></script>
+
+</div>
+
+</body>
+
+</html>
