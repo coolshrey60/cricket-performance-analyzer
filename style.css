@@ -1,0 +1,1021 @@
+/* General page styling */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #f4f6f8;
+    color: #1f2937;
+}
+
+
+/* Header */
+
+header {
+    background-color: #111827;
+    color: white;
+    text-align: center;
+    padding: 45px 20px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 36px;
+}
+
+header p {
+    margin-top: 10px;
+    font-size: 18px;
+}
+
+
+/* Main content */
+
+main {
+    max-width: 1100px;
+    margin-left: 80px;
+    padding: 20px;
+}
+
+header {
+
+    margin-left: 80px;
+
+}
+
+section {
+    margin-bottom: 40px;
+}
+
+h2 {
+    font-size: 26px;
+    margin-bottom: 20px;
+}
+
+
+/* Statistics cards */
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.stat-card {
+
+    width: 220px;
+
+    border: 2px solid #bf0000;
+
+    border-radius: 12px;
+
+    overflow: hidden;
+
+    background: white;
+
+    transition: 0.25s;
+
+}
+
+.stat-card h3 {
+
+    background: #c7c7c7;
+
+    color: white;
+
+    text-align: center;
+
+    padding: 14px;
+
+    margin: 0;
+
+}
+.stat-card p {
+
+    font-size: 30px;
+
+    font-weight: bold;
+
+    color: #bf0000;
+
+    padding: 20px;
+
+    margin: 0;
+
+    text-align: center;
+
+}
+
+
+.stat-card {
+
+    transition: 0.25s;
+
+}
+
+.stat-card:hover {
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 8px 20px
+        rgba(2,24,191,0.15);
+
+}
+
+/* About section */
+
+section:nth-child(2) {
+    background-color: white;
+    padding: 25px;
+    border-radius: 12px;
+}
+
+section:nth-child(2) p {
+    line-height: 1.6;
+}
+
+
+/* Footer */
+
+footer {
+    text-align: center;
+    padding: 25px;
+    background-color: #111827;
+    color: white;
+    margin-top: 50px;
+}
+
+
+/* Mobile responsiveness */
+
+@media (max-width: 800px) {
+
+    .stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+
+@media (max-width: 500px) {
+
+    .stats {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+/* Authentication */
+
+#auth-section {
+    min-height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.auth-container {
+    background-color: white;
+    width: 90%;
+    max-width: 450px;
+    padding: 35px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.auth-container h2 {
+    margin-bottom: 10px;
+}
+
+.auth-container input {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px;
+    margin: 12px 0;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+.auth-container button {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #111827;
+    color: white;
+}
+
+.auth-container button:hover {
+    opacity: 0.85;
+}
+
+.auth-container hr {
+    margin: 25px 0;
+    border: none;
+    border-top: 1px solid #e5e7eb;
+}
+
+#signup-message,
+#login-message {
+    font-weight: bold;
+}
+
+.sidebar {
+
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 60px;
+    height: 100vh;
+
+   background-color: #bf0000;
+
+    overflow: hidden;
+
+    transition: 0.3s;
+
+    z-index: 1000;
+
+}
+
+.sidebar:hover {
+
+    width: 220px;
+
+}
+
+.sidebar button {
+
+    width: 100%;
+
+    background: none;
+
+    border: none;
+
+    color: white;
+
+    padding: 18px;
+
+    text-align: left;
+
+    cursor: pointer;
+
+}
+
+.sidebar button:hover {
+
+    background-color: #656565;
+
+}
+
+.sidebar span {
+
+    opacity: 0;
+
+    margin-left: 10px;
+
+    transition: 0.3s;
+
+}
+
+.sidebar:hover span {
+
+    opacity: 1;
+
+}
+
+.page {
+
+    margin-left: 100px;
+
+    padding: 20px;
+
+    box-sizing: border-box;
+
+    max-width: 1200px;
+
+}
+
+header {
+
+    margin-left: 80px;
+
+    background-color: #111827;
+
+    color: white;
+
+    text-align: center;
+
+    padding: 45px 20px;
+
+}
+
+.feature-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 40px;
+
+    margin-top: 40px;
+
+}
+
+.feature-card {
+
+    border: 2px solid #bf0000;
+
+    border-radius: 12px;
+
+    overflow: hidden;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+
+    background: white;
+
+}
+
+
+.feature-card:hover {
+
+    transform: translateY(-5px);
+
+}
+
+
+
+#home-page {
+
+    width: calc(100% - 100px);
+
+}
+
+.feature-card h3 {
+
+    background: #bf0000;
+
+    color: white;
+
+    padding: 16px;
+
+    margin: 0;
+
+}
+
+.feature-card p {
+
+    padding: 20px;
+
+    margin: 0;
+
+}
+
+.feature-card:hover {
+
+    transform: translateY(-4px);
+
+    box-shadow:
+        0px 8px 20px
+        rgba(2,24,191,0.15);
+
+}
+
+.topbar {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    background: white;
+
+    height: 120px;
+
+    padding: 0 30px;
+
+    border-bottom: 2px solid #bf0000;
+
+    margin-left: 80px;
+
+}
+
+.logo {
+
+    height: 100px;
+
+    width: 100px;
+
+    object-fit: contain;
+
+}
+
+.topbar h1 {
+
+    color: #bf0000;
+
+    font-size: 28px;
+
+    font-weight: 700;
+
+    margin: 0;
+
+}
+
+.user-button {
+
+    background: none;
+
+    border: none;
+
+    color: #bf0000;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+}
+
+.user-menu {
+
+    position: relative;
+
+}
+
+.dropdown-content {
+
+    display: none;
+
+    position: absolute;
+
+    top: 40px;
+
+    right: 0;
+
+    width: 150px;
+
+    background: white;
+
+    border: 1px solid #ccc;
+
+    border-radius: 10px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 5px 15px
+        rgba(0,0,0,0.15);
+
+}
+
+.dropdown-content button {
+
+    width: 100%;
+
+    background: white;
+
+    border: none;
+
+    padding: 12px;
+
+    text-align: left;
+
+    cursor: pointer;
+
+}
+
+.dropdown-content button:hover {
+
+    background: #f0f0f0;
+
+}
+
+.player-header {
+
+    border: 2px solid #bf0000;
+
+    border-radius: 12px;
+
+    padding: 30px;
+
+    background: white;
+
+    margin-bottom: 40px;
+
+}
+
+.player-info {
+
+    text-align: center;
+
+    margin-bottom: 30px;
+
+}
+
+.player-info h1 {
+
+    color: #bf0000;
+
+    margin-bottom: 10px;
+
+}
+
+.matches-played {
+
+    font-size: 20px;
+
+    font-weight: bold;
+
+    color: #0218bf;
+
+    margin-bottom: 10px;
+
+}
+
+.player-overview {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 25px;
+
+}
+
+
+.overview-card {
+
+    border: 2px solid #bf0000;
+
+    border-radius: 12px;
+
+    overflow: hidden;
+
+    background: white;
+
+    text-align: center;
+
+}
+
+.overview-card h3 {
+
+    margin: 0;
+
+    padding: 16px;
+
+    background: #d6d6d6;
+
+    color: white;
+
+}
+
+.overview-card p {
+
+    font-size: 42px;
+
+    font-weight: bold;
+
+    color: #bf0000;
+
+    margin: 0;
+
+    padding: 30px;
+
+}
+
+.stats-grid {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    justify-content: center;
+
+    gap: 20px;
+
+    margin-bottom: 40px;
+
+}
+
+.analysis-card {
+
+    border: 2px solid #bf0000;
+
+    border-radius: 12px;
+
+    background: white;
+
+    padding: 25px;
+
+    margin-bottom: 30px;
+
+}
+
+.analysis-card h3 {
+
+    color: #bf0000;
+
+    margin-bottom: 20px;
+
+}
+
+.stats-table {
+
+    width: 100%;
+
+    border-collapse: collapse;
+
+}
+
+.stats-table th {
+
+    background: #bf0000;
+
+    color: white;
+
+}
+
+.stats-table th,
+.stats-table td {
+
+    border: 1px solid #ddd;
+
+    padding: 12px;
+
+    text-align: center;
+
+}
+
+canvas {
+
+    max-width: 100%;
+
+}
+
+.analysis-card canvas {
+
+    margin-top: 20px;
+
+    margin-bottom: 40px;
+
+}
+
+.analysis-card canvas {
+
+    max-height: 400px;
+
+}
+
+.extras-info {
+
+    margin-top: 20px;
+
+    text-align: center;
+
+    font-weight: bold;
+
+}
+
+.analysis-card canvas {
+
+    max-height: 450px;
+
+}
+
+.stats-table {
+
+    width: 100%;
+
+    border-collapse: collapse;
+
+}
+
+.stats-table th {
+
+    background: #bf0000;
+
+    color: white;
+
+}
+
+.stats-table th,
+.stats-table td {
+
+    border: 1px solid #ddd;
+
+    padding: 12px;
+
+    text-align: center;
+
+}
+
+#analytics-page input,
+#analytics-page textarea,
+#analytics-page select {
+
+    width: 100%;
+
+    padding: 10px;
+
+    margin-top: 8px;
+
+    margin-bottom: 10px;
+
+    border: 1px solid #ccc;
+
+    border-radius: 8px;
+
+}
+
+#analytics-page textarea {
+
+    min-height: 100px;
+
+}
+
+
+#analytics-page button {
+
+    background: #bf0000;
+
+    color: white;
+
+    border: none;
+
+    padding: 12px 20px;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+
+}
+
+#analytics-page {
+
+    margin-left: 100px;
+
+    max-width: 1200px;
+
+}
+
+.score-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(140px, 1fr));
+
+    gap: 12px;
+
+    margin-bottom: 20px;
+
+}
+
+#analysisOutput {
+
+    display: none;
+
+}
+
+#historyReport {
+
+    display: none;
+
+}
+
+#fitness-page input,
+#fitness-page select {
+
+    width: 100%;
+
+    padding: 10px;
+
+    margin-top: 8px;
+
+    margin-bottom: 15px;
+
+    border: 1px solid #ccc;
+
+    border-radius: 8px;
+
+    box-sizing: border-box;
+
+}
+
+#fitness-page button {
+
+    background: #bf0000;
+
+    color: white;
+
+    border: none;
+
+    padding: 12px 20px;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+
+}
+
+#fitness-page button:hover {
+
+    opacity: 0.9;
+
+}
+
+#fitnessOutput ul {
+
+    padding-left: 25px;
+
+}
+
+#fitnessOutput li {
+
+    margin-bottom: 8px;
+
+}
+
+
+#fitness-page h3 {
+
+    color: #bf0000;
+
+    margin-top: 20px;
+
+}
+
+#fitness-page hr {
+
+    margin: 25px 0;
+
+}
+
+
+.fitness-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit,
+        minmax(180px, 1fr));
+
+    gap: 15px;
+
+    margin-bottom: 20px;
+
+}
+
+.fitness-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit,
+        minmax(220px, 1fr));
+
+    gap: 15px;
+
+    margin-bottom: 20px;
+
+}
+
+#fitnessProfile:empty {
+
+    display: none !important;
+
+}
+
+#resetFitnessButton {
+
+    margin-bottom: 25px;
+
+}
+
+#nutritionTracker {
+
+    margin-top: 40px;
+
+}
+
+#nutritionTracker input {
+
+    width: 100%;
+
+    padding: 10px;
+
+    margin-top: 8px;
+
+    margin-bottom: 15px;
+
+    border-radius: 8px;
+
+    border: 1px solid #ccc;
+
+}
+
+.nutrition-row {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    margin-bottom: 15px;
+
+}
+
+.nutrition-row label {
+
+    width: 80px;
+
+    font-weight: bold;
+
+}
+
+.nutrition-row input {
+
+    width: 60px !important;
+
+    min-width: 60px;
+
+    max-width: 60px;
+
+    padding: 4px;
+
+    text-align: center;
+
+}
+
+.nutrition-row span {
+
+    font-weight: bold;
+
+    color: #666;
+
+}
+
+#diet-page input,
+#diet-page select {
+
+    width: 100%;
+
+    padding: 10px;
+
+    margin-top: 8px;
+
+    margin-bottom: 15px;
+
+    border: 1px solid #ccc;
+
+    border-radius: 8px;
+
+    box-sizing: border-box;
+
+}
+
+#diet-page button {
+
+    background: #bf0000;
+
+    color: white;
+
+    border: none;
+
+    padding: 12px 20px;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+
+}
+
+#diet-page button:hover {
+
+    opacity: 0.9;
+
+}
+
+#resetDietButton {
+
+    margin-top: 20px;
+
+    margin-bottom: 30px;
+
+}
